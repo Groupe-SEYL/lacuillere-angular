@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
+import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 
-
+const routes: Routes = [
+	{ path: 'restaurants', component: RestaurantListComponent },
+	{ path: 'newrestaurant', component: RestaurantFormComponent}
+];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports:[RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
