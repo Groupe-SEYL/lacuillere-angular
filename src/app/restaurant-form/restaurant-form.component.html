@@ -1,1 +1,33 @@
-<p>restaurant-form works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" [(ngModel)]="restaurant.name" 
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Nom du restaurant"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Le restaurant doit avoir un nom!</div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="restaurant.description" 
+          class="form-control"
+          id="description"
+          name="description"
+          placeholder="Faites part de votre convivialité!"
+          required #description="ngModel">
+        <div [hidden]="!description.pristine" class="alert alert-danger">Besoin d'une description!</div>
+      </div>
+
+<!-- Besoin d'ajouter les champs pour
+	Le menu
+	L'addresse 
+	Le nombre d'étoiles -->
+
+      <button type="submit" [disabled]="!userForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
