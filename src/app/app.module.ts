@@ -9,6 +9,9 @@ import { RestaurantListComponent } from './restaurant-list/restaurant-list.compo
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { MenuFormComponent } from './menu-form/menu-form.component';
 import { MenuShowComponent } from './menu-show/menu-show.component';
+import {DeleteRestaurantComponent} from './restaurant/delete-restaurant.component';
+import {RestaurantComponent} from './restaurant/restaurant.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,16 @@ import { MenuShowComponent } from './menu-show/menu-show.component';
     RestaurantListComponent,
     RestaurantFormComponent,
     MenuFormComponent,
-    MenuShowComponent
+    MenuShowComponent,
+
+
+    RestaurantComponent,
+    DeleteRestaurantComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     FormsModule
   ],
