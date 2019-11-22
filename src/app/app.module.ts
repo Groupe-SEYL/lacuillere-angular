@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RestaurantService } from './service/restaurant.service';
 import { AppComponent } from './app.component';
-//import { RestaurantComponent } from './restaurant/restaurant.component';
-//import { MenuComponent } from './menu/menu.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
@@ -11,16 +11,16 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
 @NgModule({
   declarations: [
     AppComponent,
-    //RestaurantComponent,
-    //MenuComponent,
     RestaurantListComponent,
     RestaurantFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
