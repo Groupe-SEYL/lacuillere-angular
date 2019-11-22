@@ -7,12 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
+import { MenuFormComponent } from './menu-form/menu-form.component';
+import { MenuShowComponent } from './menu-show/menu-show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantListComponent,
-    RestaurantFormComponent
+    RestaurantFormComponent,
+    MenuFormComponent,
+    MenuShowComponent
   ],
   imports: [
     BrowserModule,

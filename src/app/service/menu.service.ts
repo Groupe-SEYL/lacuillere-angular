@@ -5,17 +5,22 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class MenuService {
-	private menusUrl: string;
+  private menusUrl: string;
 
   constructor(private http: HttpClient) {
-  	this.menusUrl = 'http://localhost:8080/menu';
-   }
+    this.menusUrl = 'http://localhost:8080/menu';
+  }
 
-   public findAll(): Observable<Menu[]> {
-   		return this.http.get<Menu[]>(this.menusUrl);
-   }
+  public findAll(): Observable<Menu[]> {
+    return this.http.get<Menu[]>(this.menusUrl);
+  }
 
-   public save(menu: Menu){
-   	return this.http.post<Menu>(this.menusUrl, menu);
-   }
+  public getById(id: number): Observable<Menu> {
+    const url = '${this.menuUrl}/${id}';
+    return this.http.get<Menu>(this.menusUrl);
+  }
+
+  public save(menu: Menu){
+    return this.http.post<Menu>(this.menusUrl, menu);
+  }
 }
