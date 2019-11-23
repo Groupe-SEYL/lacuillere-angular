@@ -15,6 +15,7 @@ import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
+    MenuShowComponent,
     AppComponent,
     RestaurantListComponent,
     RestaurantFormComponent,
