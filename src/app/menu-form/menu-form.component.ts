@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {ActivatedRoute, Route, Router} from '@angular/router';
 import {MenuService} from '../service/menu.service';
 import {Menu} from '../model/menu';

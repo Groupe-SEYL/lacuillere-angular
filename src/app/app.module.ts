@@ -12,6 +12,7 @@ import { MenuShowComponent } from './menu-show/menu-show.component';
 import {DeleteRestaurantComponent} from './restaurant/delete-restaurant.component';
 import {RestaurantComponent} from './restaurant/restaurant.component';
 import {RouterModule} from '@angular/router';
+import {MenuService} from './service/menu.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import {RouterModule} from '@angular/router';
     HttpClientModule,
     FormsModule
   ],
-  providers: [RestaurantService],
+  providers: [RestaurantService, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
