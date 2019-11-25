@@ -13,6 +13,7 @@ import {DeleteRestaurantComponent} from './restaurant/delete-restaurant.componen
 import {RestaurantComponent} from './restaurant/restaurant.component';
 import {RouterModule} from '@angular/router';
 import {MenuService} from './service/menu.service';
+import { MenuListComponent } from './menu-list/menu-list.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,9 @@ import {MenuService} from './service/menu.service';
     RestaurantFormComponent,
     MenuFormComponent,
     MenuShowComponent,
-
-
     RestaurantComponent,
     DeleteRestaurantComponent,
+    MenuListComponent,
   ],
   imports: [
     BrowserModule,

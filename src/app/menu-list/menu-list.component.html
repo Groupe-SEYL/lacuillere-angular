@@ -1,0 +1,28 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Description</th>
+          <th scope="col">Entree</th>
+          <th scope="col">Main course</th>
+          <th scope="col">Dessert</th>
+          <th scope="col">Total price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let menu of menus">
+          <td>{{ menu.id }}</td>
+          <td>{{ menu.name }}</td>
+          <td>{{ menu.description }}</td>
+          <td>{{ menu.entree }}</td>
+          <td>{{ menu.mainCourse }}</td>
+          <td>{{ menu.dessert }}</td>
+          <td>{{ menu.totalPrice }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -3,7 +3,7 @@
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
         <label for="name">Nom</label>
-        <input type="text" [(ngModel)]="restaurant.name" 
+        <input type="text" [(ngModel)]="restaurant.name"
           class="form-control"
           id="name"
           name="name"
@@ -13,7 +13,7 @@
       <div [hidden]="!name.pristine" class="alert alert-danger">Le restaurant doit avoir un nom!</div>
       <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" [(ngModel)]="restaurant.description" 
+        <input type="text" [(ngModel)]="restaurant.description"
           class="form-control"
           id="description"
           name="description"
@@ -22,12 +22,13 @@
         <div [hidden]="!description.pristine" class="alert alert-danger">Besoin d'une description!</div>
       </div>
 
+
 <!-- Besoin d'ajouter les champs pour
 	Le menu
-	L'addresse 
+	L'addresse
 	Le nombre d'étoiles -->
 
-      <button type="submit" [disabled]="!userForm.form.valid" 
+      <button type="submit" [disabled]="!userForm.form.valid"
         class="btn btn-info">Submit</button>
     </form>
   </div>
