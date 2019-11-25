@@ -1,18 +1,41 @@
 <style>
 
   .toolbar {
-height: 60px;
+height: 70px;
 margin: -8px;
 display: flex;
 align-items: center;
 background-color: #1976d2;
 color: white;
 font-weight: 600;
+    top: 0;
+    position: fixed;
+    width: 100%;
 }
 
 .toolbar img {
 margin: 0 16px;
 }
+
+  .content {
+    text-align: center;
+    position: center;
+  }
+  .btn-search{
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: chartreuse;
+    font-family: "Fira Code Medium";
+    font-size: 30px;
+    font-style: italic;
+  }
+  .form-control{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+  }
+
 </style>
 
 
@@ -24,7 +47,7 @@ margin: 0 16px;
     src="HTML_CSS/r_img.jpeg"
   />
 
-  <span> &hearts; WORLDWIDE'S FOOD for all !  &hearts; </span>
+  <span style="font-style: italic"> &hearts; WORLDWIDE'S FOOD for all !  &hearts; </span>
   <div class="spacer"></div>
   <a aria-label="Angular on Spring first" target="_blank" rel="noopener"  title="Restaurant">
 
@@ -68,23 +91,13 @@ margin: 0 16px;
   <!--  Barre de recherche RESTAURANT -->
   <form>
     <div class="search">
-      <h3> {{ subtitle }}</h3>
-      <input ng-model="query" type="text" class="form-control" placeholder=" search restaurants...">
-      <button type="submit" class="btn btn-default glyphicon glyphicon-search" type="button"> Browser</button>
+      <input ng-model="query" type="text" class="form-control" placeholder=" search somes restaurants...">
+      <button type="submit" class="btn-search" type="button" autofocus> Browser</button>
     </div>
   </form>
 
 </div>
 
-<div>
-
-  <a routerLink="/restaurants"> List of restaurants</a>
-  <a style="margin-left:10px" routerLink="/restaurants/{id}">Delete Restaurant</a>
-  <a style="margin-left:10px" routerLink="/restaurants/{id}">Add Restaurant</a>
-  <br/>
-  <router-outlet></router-outlet>
-
-</div>
 <div>
 
   <a routerLink="/newmenu"> Add Menus</a>

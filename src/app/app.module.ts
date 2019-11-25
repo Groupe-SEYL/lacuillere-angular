@@ -9,7 +9,6 @@ import { RestaurantListComponent } from './restaurant-list/restaurant-list.compo
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
 import { MenuFormComponent } from './menu-form/menu-form.component';
 import { MenuShowComponent } from './menu-show/menu-show.component';
-import {DeleteRestaurantComponent} from './restaurant/delete-restaurant.component';
 import {RestaurantComponent} from './restaurant/restaurant.component';
 import {RouterModule} from '@angular/router';
 import {MenuService} from './service/menu.service';
@@ -24,7 +23,6 @@ import { MenuListComponent } from './menu-list/menu-list.component';
     MenuFormComponent,
     MenuShowComponent,
     RestaurantComponent,
-    DeleteRestaurantComponent,
     MenuListComponent,
   ],
   imports: [

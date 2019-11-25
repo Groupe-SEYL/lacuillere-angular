@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from '../model/restaurant';
 import { Observable } from 'rxjs/Observable';
-import {Menu} from '../model/menu';
 
 @Injectable()
 export class RestaurantService {
@@ -15,7 +14,7 @@ export class RestaurantService {
   }
 
   public findAll(): Observable<Restaurant[]> {
-  	return this.http.get<Restaurant[]>(this.restaurantsUrl);
+    return this.http.get<Restaurant[]>(this.restaurantsUrl);
   }
 
   public getmenu(): Observable<Menu>{
@@ -31,7 +30,7 @@ export class RestaurantService {
   /** DELETE: delete the restaurant from the server */
  public delete(id: number): Observable<{}> {
   const url = '${this.restaurantsUrl}/${id}'; // DELETE api/heroes/42
-  return this.http.delete(url);
+  return this.http.delete<Restaurant>(url);
 }
 
 
