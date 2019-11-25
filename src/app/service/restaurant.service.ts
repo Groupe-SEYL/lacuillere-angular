@@ -8,17 +8,17 @@ export class RestaurantService {
   private restaurantsUrl: string;
   private newRestaurantURL: string;
 
-  constructor(private http: HttpClient) { 
-  		this.restaurantsUrl = 'http://localhost:8080/restaurants';
-  		this.newRestaurantURL = 'http://localhost:8080/newrestaurant';
+  constructor(private http: HttpClient) {
+    this.restaurantsUrl = 'http://localhost:8080/restaurants';
+    this.newRestaurantURL = 'http://localhost:8080/newrestaurant';
   }
 
   public findAll(): Observable<Restaurant[]> {
-  	return this.http.get<Restaurant[]>(this.restaurantsUrl);
+    return this.http.get<Restaurant[]>(this.restaurantsUrl);
   }
 
   public save(restaurant: Restaurant) {
-  	return this.http.post<Restaurant>(this.newRestaurantURL, restaurant);
+    return this.http.post<Restaurant>(this.newRestaurantURL, restaurant);
   }
 
 

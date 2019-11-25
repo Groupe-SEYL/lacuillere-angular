@@ -9,12 +9,23 @@ import { RestaurantService } from '../service/restaurant.service';
 })
 export class RestaurantListComponent implements OnInit {
 
-	restaurants: Restaurant[];
-  
-  constructor(private restaurantService: RestaurantService) { }
+  constructor(private restaurantService: RestaurantService) {
+  }
+  restaurants: Restaurant[];
+
+  selectedRestaurant: Restaurant;
 
   ngOnInit() {
-  	this.restaurantService.findAll().subscribe(data => {this.restaurants = data;})
+    this.restaurantService.findAll().subscribe(data => {
+      this.restaurants = data;
+    });
   }
+    deleteResturant(restaurant: Restaurant): void {
+      this.restaurantService.delete(restaurant.id)
+        .subscribe(data => {
+          this.restaurants = this.restaurants.filter(r => r !== restaurant);
+        });
+  }
+
 
 }

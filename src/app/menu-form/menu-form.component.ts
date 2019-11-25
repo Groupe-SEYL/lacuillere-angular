@@ -8,7 +8,7 @@ import {Menu} from '../model/menu';
   templateUrl: './menu-form.component.html',
   styleUrls: ['./menu-form.component.css']
 })
-export class MenuFormComponent{
+export class MenuFormComponent {
   menu: Menu;
 
   constructor(private route: ActivatedRoute,

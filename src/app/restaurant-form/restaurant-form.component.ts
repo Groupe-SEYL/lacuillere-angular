@@ -10,23 +10,20 @@ import { Restaurant } from '../model/restaurant';
 })
 
 export class RestaurantFormComponent {
-	restaurant: Restaurant;
+  restaurant: Restaurant;
 
   constructor(
-  	private route: ActivatedRoute,
-  	private router: Router,
-  	private restaurantService: RestaurantService) { 
-  	this.restaurant = new Restaurant();
+    private route: ActivatedRoute,
+    private router: Router,
+    private restaurantService: RestaurantService) {
+    this.restaurant = new Restaurant();
   }
 
   onSubmit() {
-  	this.restaurantService.save(this.restaurant).subscribe(result => this.gotoRestaurantList());
+    this.restaurantService.save(this.restaurant).subscribe(result => this.gotoRestaurantList());
   }
 
-  gotoRestaurantList(){
-  	this.router.navigate(['/restaurants']);
+  gotoRestaurantList() {
+    this.router.navigate(['/restaurants']);
   }
-
-  
-
 }

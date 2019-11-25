@@ -17,8 +17,8 @@ export class DeleteRestaurantComponent {
 
   deleteRestaurant(): void {
     this.restaurantService.deleteRestaurant(this.restaurant)
-      .subscribe(data => alert("Restaurant deleted successfully."));
+      .subscribe(data => alert('Restaurant deleted successfully.'));
 
-  };
+  }
 
 }
