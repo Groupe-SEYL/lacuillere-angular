@@ -25,7 +25,7 @@ export class RestaurantService {
   /** DELETE: delete the restaurant from the server */
  public delete(id: number): Observable<{}> {
   const url = '${this.restaurantsUrl}/${id}'; // DELETE api/heroes/42
-  return this.http.delete(url);
+  return this.http.delete<Restaurant>(url);
 }
 
 
