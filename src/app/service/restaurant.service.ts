@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from '../model/restaurant';
 import { Observable } from 'rxjs/Observable';
+import { Menu} from '../model/menu';
 
 @Injectable()
 export class RestaurantService {
