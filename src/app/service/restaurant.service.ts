@@ -2,23 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from '../model/restaurant';
 import { Observable } from 'rxjs/Observable';
+import {Menu} from '../model/menu';
 
 @Injectable()
 export class RestaurantService {
   private restaurantsUrl: string;
-  private newRestaurantURL: string;
+  private menuUrl: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
   		this.restaurantsUrl = 'http://localhost:8080/restaurants';
-  		this.newRestaurantURL = 'http://localhost:8080/newrestaurant';
+  		this.menuUrl = 'http://localhost:8080/menu';
   }
 
   public findAll(): Observable<Restaurant[]> {
   	return this.http.get<Restaurant[]>(this.restaurantsUrl);
   }
 
+  public getmenu(): Observable<Menu>{
+    const urlmenu = '${this.menuUrl}/${5}';
+    return this.http.get<Menu>(urlmenu);
+  }
+
   public save(restaurant: Restaurant) {
-  	return this.http.post<Restaurant>(this.newRestaurantURL, restaurant);
+  	return this.http.post<Restaurant>(this.restaurantsUrl, restaurant);
   }
 
 
