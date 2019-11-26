@@ -27,7 +27,8 @@ export class RestaurantListComponent implements OnInit {
     const id: number = restaurant.id;
     console.log(id);
     this.restaurantService.delete(id)
-        .subscribe();
+        .subscribe( );
+    window.location.reload();
   }
 
 

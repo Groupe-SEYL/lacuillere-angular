@@ -27,8 +27,8 @@
       </div>
 
 <!--      Form Menus-->
-      <app-menu-form></app-menu-form>
-      <app-menu-list></app-menu-list>
+<!--      <app-menu-form></app-menu-form>-->
+<!--      <app-menu-list></app-menu-list>-->
 
       <div class="form-group">
         <label for="address">Adresse</label>
@@ -42,15 +42,16 @@
       </div>
 
       <div class="form-group">
-        <label for="starsNumber"> Nombre d'étoile</label>
+        <label for="starsNumber"> Nombre(s) d'étoile</label>
         <input type="text" [(ngModel)]="restaurant.starsNumber"
                class="form-control"
                id="starsNumber"
                name="starsNumber"
-               placeholder="Soillez fier du succés de votre établissement ">
+               placeholder="Soyez fier du succés de votre établissement ">
       </div>
 
       <button type="submit" [disabled]="!userForm.form.valid"
         class="btn btn-info">Submit</button>
     </form>
   </div>
+</div>

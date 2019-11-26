@@ -13,7 +13,7 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
+<!--        <th scope="col">#</th>-->
         <th scope="col">Nom</th>
         <th scope="col">Description</th>
         <th scope="col"> Delete Restaurant</th>
@@ -21,7 +21,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let restaurant of restaurants">
-        <td>{{ restaurant.id }}</td>
+<!--        <td>{{ restaurant.id }}</td>-->
         <td>{{ restaurant.name }}</td>
         <td>{{ restaurant.description }}</td>
         <td><button class="btn-btn-danger" (click)="deleteRestaurant(restaurant)"> Delete</button></td>
