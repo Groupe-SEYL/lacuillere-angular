@@ -5,6 +5,7 @@ import { Restaurant } from '../model/restaurant';
 import {Menu} from '../model/menu';
 import {MenuService} from '../service/menu.service';
 import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-restaurant-form',
@@ -16,10 +17,14 @@ export class RestaurantFormComponent {
   restaurant: Restaurant;
   Menus = new FormControl();
 
+  ListMenu: Observable<Menu[]>;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private restaurantService: RestaurantService) {
+    private restaurantService: RestaurantService,
+    private menuService: MenuService) {
+    this.ListMenu = menuService.findAll();
     this.restaurant = new Restaurant();
   }
 
@@ -27,7 +32,7 @@ export class RestaurantFormComponent {
     this.restaurantService.save(this.restaurant).subscribe(result => this.gotoRestaurantList());
   }
 
-  gotoRestaurantList(){
+  gotoRestaurantList() {
     this.router.navigate(['/restaurants']);
   }
 
