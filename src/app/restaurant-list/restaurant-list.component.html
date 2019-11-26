@@ -1,7 +1,13 @@
 <style>
-  .btn-btn-danger {
+  .btn-delete {
     background-color: darkgray;
     color: red;
+    font-size: 20px;
+    border-radius: 50px;
+  }
+  .btn-more{
+    background-color: darkgrey;
+    color: blue;
     font-size: 20px;
     border-radius: 50px;
   }
@@ -17,6 +23,7 @@
         <th scope="col">Nom</th>
         <th scope="col">Description</th>
         <th scope="col"> Delete Restaurant</th>
+        <th scope="col"> Show me </th>
       </tr>
       </thead>
       <tbody>
@@ -24,7 +31,8 @@
 <!--        <td>{{ restaurant.id }}</td>-->
         <td>{{ restaurant.name }}</td>
         <td>{{ restaurant.description }}</td>
-        <td><button class="btn-btn-danger" (click)="deleteRestaurant(restaurant)"> Delete</button></td>
+        <td><button class="btn-delete" (click)="deleteRestaurant(restaurant)"> Delete</button></td>
+        <td><button class="btn-more" (click)="displaySingleRestaurant(restaurant)"> Further informations </button></td>
       </tr>
       </tbody>
     </table>

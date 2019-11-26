@@ -32,4 +32,11 @@ export class RestaurantListComponent implements OnInit {
   }
 
 
+  displaySingleRestaurant(restaurant: Restaurant): void {
+    console.log(restaurant.id);
+    const id: number = restaurant.id;
+    console.log(id);
+    this.restaurantService.displaySingleRestaurant(id)
+      .subscribe();
+  }
 }

@@ -5,13 +5,31 @@ height: 70px;
 margin: -8px;
 display: flex;
 align-items: center;
-background-color: #1976d2;
+background-color: royalblue;
 color: white;
 font-weight: 600;
     top: 0;
     position: fixed;
     width: 100%;
 }
+  .container{
+    background-color: orange;
+  }
+  .card-body{
+    background-color: gold;
+  }
+  .btn-btn-info{
+    border: solid;
+    border-color: royalblue;
+    border-radius: 5px;
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+  }
+  .card-body:hover{
+    background-color: tomato;
+    color: gold;
+  }
 
 .toolbar img {
 margin: 0 16px;
@@ -66,16 +84,16 @@ margin: 0 16px;
           <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a routerLink="/restaurants" class="btn btn-info">List Restaurants</a>
+              <a routerLink="/restaurants" class="btn-btn-info">List Restaurants</a>
                 </li>
             <li class="list-inline-item">
-              <a routerLink="/newrestaurant" class="btn btn-info">Add Restaurant</a>
+              <a routerLink="/newrestaurant" class="btn-btn-info">Add Restaurant</a>
                 </li>
             <li class="list-inline-item">
-              <a routerLink="/newmenu" class="btn btn-info">Add menu</a>
+              <a routerLink="/newmenu" class="btn-btn-info">Add menu</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/menus" class="btn btn-info">List menu</a>
+              <a routerLink="/menus" class="btn-btn-info">List menu</a>
             </li>
           </ul>
         </div>
@@ -91,17 +109,9 @@ margin: 0 16px;
   <!--  Barre de recherche RESTAURANT -->
   <form>
     <div class="search">
-      <input ng-model="query" type="text" class="form-control" placeholder=" search somes restaurants...">
+      <input ng-model="query" type="text" class="form-control" placeholder=" Search somes restaurants...">
       <button type="submit" class="btn-search" type="button" autofocus> Browser</button>
     </div>
   </form>
-
-</div>
-
-<div>
-
-  <a routerLink="/newmenu"> Add Menus</a>
-  <br/>
-  <router-outlet></router-outlet>
 
 </div>
