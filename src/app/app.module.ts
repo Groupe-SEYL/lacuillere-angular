@@ -14,6 +14,9 @@ import {RouterModule} from '@angular/router';
 import {MenuService} from './service/menu.service';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import {SinglerestaurantShowComponent} from './singlerestaurant-show/singlerestaurant-show.component';
+import { RestaurantFilterPipe } from './restaurantfilter.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import {SinglerestaurantShowComponent} from './singlerestaurant-show/singleresta
     MenuShowComponent,
     RestaurantComponent,
     MenuListComponent,
-    SinglerestaurantShowComponent
+    SinglerestaurantShowComponent,
+    RestaurantFilterPipe,
+
   ],
   imports: [
     BrowserModule,

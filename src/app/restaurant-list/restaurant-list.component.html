@@ -33,8 +33,10 @@
 
 </style>
 <link href="https://fonts.googleapis.com/css?family=Courgette|Cuprum|Karma|Pathway+Gothic+One|Shadows+Into+Light&display=swap" rel="stylesheet">
-
+<input [(ngModel)]="searchText" type="text" class="form-control" placeholder=" Search somes restaurants...">
 <div class="card-my-5">
+
+<div class="card my-5">
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
@@ -47,7 +49,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let restaurant of restaurants">
+      <tr *ngFor="let restaurant of restaurants | filter: searchText">
 <!--        <td>{{ restaurant.id }}</td>-->
         <td>{{ restaurant.name }}</td>
         <td>{{ restaurant.description }}</td>
@@ -58,3 +60,9 @@
     </table>
   </div>
 </div>
+
+
+
+
+
+

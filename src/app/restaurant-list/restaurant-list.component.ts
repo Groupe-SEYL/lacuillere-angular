@@ -15,6 +15,7 @@ export class RestaurantListComponent implements OnInit {
   restaurants: Restaurant[];
 
   selectedRestaurant: Restaurant;
+  searchText: string;
 
   ngOnInit() {
     this.restaurantService.findAll().subscribe(data => {
@@ -39,4 +40,6 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.displayOneRestaurant(id)
       .subscribe();
   }
+
+
 }

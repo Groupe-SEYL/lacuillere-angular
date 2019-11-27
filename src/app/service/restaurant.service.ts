@@ -29,14 +29,15 @@ export class RestaurantService {
 
 
   /** DELETE: delete the restaurant from the server */
- public delete(id: number): Observable<{}> {
-  console.log(id);
-  const st: string = '' + id;
-  console.log(st);
-  const url: string = this.restaurantsUrl + '/' + id;
-  console.log(st);
-  return this.http.delete(url);
-}
+  public delete(id: number): Observable<{}> {
+    // const url = 'http://localhost:8080/restaurants/2'; // DELETE api/heroes/42
+    console.log(id);
+    const st: string = '' + id;
+    console.log(st);
+    const url: string = this.restaurantsUrl + '/' + id;
+    console.log(st);
+    return this.http.delete(url);
+  }
 
 public displayOneRestaurant(id: number): Observable<{}> {
   console.log(id);
