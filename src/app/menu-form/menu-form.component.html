@@ -13,15 +13,15 @@
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
       <div class="form-group">
-        <label for="name">Nom</label>
+        <label for="name">Name</label>
         <input type="text" [(ngModel)]="menu.name"
                class="form-control"
                id="name"
                name="name"
-               placeholder="Nom du menu"
+               placeholder="Menu name"
                required #name="ngModel">
       </div>
-      <div [hidden]="!name.pristine" class="alert alert-danger">Le menu doit avoir un nom!</div>
+      <div [hidden]="!name.pristine" class="alert alert-danger"> Menu must have a name ! </div>
 
       <div class="form-group">
         <label for="description">Description</label>
@@ -29,43 +29,43 @@
                class="form-control"
                id="description"
                name="description"
-               placeholder="Décriver les délicatesses de votre menu"
+               placeholder="Describe the delicious taste of the menu"
                required #description="ngModel">
       </div>
-      <div [hidden]="!description.pristine" class="alert alert-danger">Le menu a besoin d'une description!</div>
+      <div [hidden]="!description.pristine" class="alert alert-danger">Menu mush have a description!</div>
 
       <div class="form-group">
-        <label for="entree">Nom de l'entrée</label>
+        <label for="entree">Appertizer's name</label>
         <input type="text" [(ngModel)]="menu.entree"
                class="form-control"
                id="entree"
                name="entree"
-               placeholder="Nommer l'entrée"
+               placeholder="Named appertizer"
                required #description="ngModel">
       </div>
-      <div [hidden]="!description.pristine" class="alert alert-danger">Le menu a besoin d'un nom pour l'entrée!</div>
+      <div [hidden]="!description.pristine" class="alert alert-danger">Menu must have a appertizer name!</div>
 
       <div class="form-group">
-        <label for="mainCourse">Nom du Plat Principal</label>
+        <label for="mainCourse">Main course name</label>
         <input type="text" [(ngModel)]="menu.mainCourse"
                class="form-control"
                id="mainCourse"
                name="mainCourse"
-               placeholder="Nommer le plat principal"
+               placeholder="Named main course"
                required #description="ngModel">
       </div>
-      <div [hidden]="!description.pristine" class="alert alert-danger">Le menu a besoin d'un nom pour le plat principal!</div>
+      <div [hidden]="!description.pristine" class="alert alert-danger">Menu must have a main course name!</div>
 
       <div class="form-group">
-        <label for="dessert">Nom du dessert</label>
+        <label for="dessert">Dessert's name</label>
         <input type="text" [(ngModel)]="menu.dessert"
                class="form-control"
                id="dessert"
                name="dessert"
-               placeholder="Nommer le dessert"
+               placeholder="Named dessert"
                required #description="ngModel">
       </div>
-      <div [hidden]="!description.pristine" class="alert alert-danger">Le menu a besoin d'un nom pour le dessert!</div>
+      <div [hidden]="!description.pristine" class="alert alert-danger">Menu must have a dessert !</div>
 
       <div class="form-group">
         <label for="drink">Drink</label>
@@ -73,21 +73,21 @@
                class="form-control"
                id="drink"
                name="description"
-               placeholder="Nommer la boisson"
+               placeholder="Named drink"
                required #description="ngModel">
       </div>
-      <div [hidden]="!description.pristine" class="alert alert-danger">Le menu a besoin un nom pour la boisson!</div>
+      <div [hidden]="!description.pristine" class="alert alert-danger">Menu must have a drink !</div>
 
       <div class="form-group">
-        <label for="totalPrice">Prix total du menu</label>
+        <label for="totalPrice">Total price</label>
         <input type="text" [(ngModel)]="menu.totalPrice"
                class="form-control"
                id="totalPrice"
                name="totalPrice"
-               placeholder="Indiquer le prix total pour le menu"
+               placeholder="Indicate the menu's toal price"
                required #description="ngModel">
       </div>
-      <div [hidden]="!description.pristine" class="alert alert-danger">Le menu a besoin d'un prix total!</div>
+      <div [hidden]="!description.pristine" class="alert alert-danger">Menu must have a price !</div>
 
     </form>
 

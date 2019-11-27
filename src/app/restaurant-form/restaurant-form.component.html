@@ -15,15 +15,15 @@
 
 
       <div class="form-group">
-        <label for="name">Nom</label>
+        <label for="name">Name</label>
         <input type="text" [(ngModel)]="restaurant.name"
           class="form-control"
           id="name"
           name="name"
-          placeholder="Nom du restaurant"
+          placeholder="Restaurant's name"
           required #name="ngModel">
       </div>
-      <div [hidden]="!name.pristine" class="alert alert-danger">Le restaurant doit avoir un nom!</div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Restaurant must have a name!</div>
 
 
       <div class="form-group">
@@ -32,9 +32,9 @@
           class="form-control"
           id="description"
           name="description"
-          placeholder="Faites part de votre convivialité!"
+          placeholder="Share the joy into your restaurant !"
           required #description="ngModel">
-        <div [hidden]="!description.pristine" class="alert alert-danger">Besoin d'une description!</div>
+        <div [hidden]="!description.pristine" class="alert alert-danger">Need a description!</div>
       </div>
 
 <!--      Form Menus-->
@@ -42,23 +42,23 @@
 <!--      <app-menu-list></app-menu-list>-->
 
       <div class="form-group">
-        <label for="address">Adresse</label>
+        <label for="address">Address</label>
         <input type="text" [(ngModel)]="restaurant.address"
                class="form-control"
                id="address"
                name="address"
-               placeholder="Indiquez l'adresse de votre établissement!"
+               placeholder="Indicate restaurant's address!"
                required #address="ngModel">
-        <div [hidden]="!address.pristine" class="alert alert-danger">Il faut une adresse pour que l'on puisse vous trouver!</div>
+        <div [hidden]="!address.pristine" class="alert alert-danger">You need a address to find you!</div>
       </div>
 
       <div class="form-group">
-        <label for="starsNumber"> Nombre(s) d'étoile</label>
+        <label for="starsNumber"> Number(s) of star(s)</label>
         <input type="text" [(ngModel)]="restaurant.starsNumber"
                class="form-control"
                id="starsNumber"
                name="starsNumber"
-               placeholder="Soyez fier du succés de votre établissement ">
+               placeholder="STARS">
       </div>
 
       <button type="submit" [disabled]="!userForm.form.valid"
