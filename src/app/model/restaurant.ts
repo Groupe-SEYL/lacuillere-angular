@@ -9,4 +9,5 @@ export class Restaurant {
     address: string;
     starsNumber: number;
     averagePrice: number;
+
 }

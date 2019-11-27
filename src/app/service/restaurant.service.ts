@@ -7,12 +7,10 @@ import {Menu} from '../model/menu';
 @Injectable()
 export class RestaurantService {
   private restaurantsUrl: string;
-  private restaurantsOneUrl: string;
   private menuUrl: string;
 
   constructor(private http: HttpClient) {
     this.restaurantsUrl = 'http://localhost:8080/restaurants';
-    this.restaurantsOneUrl = 'http://localhost:8080/restaurants/singles';
     this.menuUrl = 'http://localhost:8080/menu';
   }
 
@@ -32,13 +30,21 @@ export class RestaurantService {
 
   /** DELETE: delete the restaurant from the server */
  public delete(id: number): Observable<{}> {
-  const url = '${this.restaurantsUrl}/${id}'; // DELETE api/heroes/42
-  return this.http.delete<Restaurant>(url);
+  console.log(id);
+  const st: string = '' + id;
+  console.log(st);
+  const url: string = this.restaurantsUrl + '/' + id;
+  console.log(st);
+  return this.http.delete(url);
 }
 
-public displaySingleRestaurant(id: number): Observable<{}> {
-   const url = '${this.restaurantsOneUrl}/${id}'
-   return this.http.get<Restaurant>(url);
+public displayOneRestaurant(id: number): Observable<{}> {
+  console.log(id);
+  const st: string = '' + Restaurant;
+  console.log(st);
+  const url: string = this.restaurantsUrl + '/' + id;
+  console.log(st);
+  return this.http.get(url);
 }
 
 

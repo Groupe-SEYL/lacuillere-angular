@@ -12,6 +12,9 @@ font-weight: 600;
     position: fixed;
     width: 100%;
 }
+  body{
+    background-color: cornsilk;
+  }
   .container{
     background-color: orange;
   }
@@ -20,12 +23,18 @@ font-weight: 600;
   }
   .btn-btn-info{
     border: solid;
-    border-color: royalblue;
-    border-radius: 5px;
-    background-color: royalblue;
-    color: white;
+    border-style: groove;
+    border-radius: 15px;
     text-decoration: none;
+    background-color: darkorange;
+    color: gold;
   }
+
+  .btn-btn-info:hover{
+    background-color: gold;
+    color: tomato;
+  }
+
   .card-body:hover{
     background-color: tomato;
     color: gold;
@@ -53,16 +62,72 @@ margin: 0 16px;
     height: 50px;
     text-align: center;
   }
+  .text-center-list-inline-py-3 {
+    font-size: 30px;
+    text-align: center;
+  }
+  /*gadget de la barre de recherche*/
+  .recherche_p {
+    background-color: #eeeeee;   /* Couleur de fond */
+    border-style: solid;   /* Style de la bordure  */
+    border-width: 1px;   /* Epaisseur de la bordure  */
+    border-color: #dddddd;   /* Couleur de la bordure  */
+    padding: 10px 10px 10px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    width: 40%;
+    position: absolute;
+    left: 500px;
+
+  }
+  /* Champ de saisie */
+  #searchthis #search {
+    background-color: #ffffff;   /* Couleur de fond */
+    border-style: solid;   /* Style de la bordure  */
+    border-width: 1px;   /* Epaisseur de la bordure  */
+    border-color: #dddddd;   /* Couleur de la bordure  */
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    width: 98.5%;   /* Permet d'ajuster la largeur du champ de saisie à 100% */
+    box-sizing: border-box;   /* Important */
+    font-family: Lato;   /* Police du texte */
+    font-size: 12px;   /* Taille de la police du texte */
+    font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+    letter-spacing: 1px;   /* Espacement des caractères */
+  }
+
+  /* Bouton valider */
+  #searchthis #search-btn {
+    background-color: #E8B960;   /* Couleur de fond */
+    border-style: solid;   /* Style de la bordure  */
+    border-width: 1px;   /* Epaisseur de la bordure  */
+    border-color: #E8B960;   /* Couleur de la bordure  */
+    padding: 5px 10px 5px 10px;   /* Espace entre les bords et le contenu : haut droite bas gauche  */
+    width: 98.5%;   /* Permet d'ajuster la largeur du champ de saisie à 100% */
+    box-sizing: border-box;   /* Important */
+    font-family: PT sans;   /* Police du texte */
+    font-size: 13px;   /* Taille de la police du texte */
+    font-weight: normal;   /* Graisse du texte : normal = normal ; bold = gras */
+    letter-spacing: 2px;   /* Espacement des caractères */
+    margin: 10px 0 0 0;   /* Espace autour du bouton : haut droite bas gauche  */
+    text-transform: uppercase;   /* Transforme le texte en majuscules */
+    color: #ffffff;   /* Couleur du texte */
+  }
+
+  /* Bouton valider quand survolé par la souris */
+  #searchthis #search-btn:hover {
+    background-color: #ffffff;   /* Couleur de fond */
+    color: #E8B960;   /* Couleur du texte */
+    cursor: pointer;   /* Apparence du curseur comme pour un lien */
+  }
+
 
 </style>
 
-
+<body>
 <div class="toolbar" role="banner">
 
   <img
     width="40"
     alt=""
-    src="HTML_CSS/r_img.jpeg"
+    src="#"
   />
 
   <span style="font-style: italic"> &hearts; WORLDWIDE'S FOOD for all !  &hearts; </span>
@@ -82,7 +147,7 @@ margin: 0 16px;
       <div class="card bg-dark my-5">
         <div class="card-body">
           <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
+          <ul class="text-center-list-inline-py-3">
             <li class="list-inline-item">
               <a routerLink="/restaurants" class="btn-btn-info">List Restaurants</a>
                 </li>
@@ -104,14 +169,15 @@ margin: 0 16px;
 </div>
 
 
+  <div class="recherche_p">
 
-<div class="content" role="main">
-  <!--  Barre de recherche RESTAURANT -->
-  <form>
-    <div class="search">
-      <input ng-model="query" type="text" class="form-control" placeholder=" Search somes restaurants...">
-      <button type="submit" class="btn-search" type="button" autofocus> Browser</button>
-    </div>
-  </form>
+    <form action="/#" id="searchthis" method="get">
+      <input id="search" name="q" type="text" placeholder="Rechercher" />
+      <input id="search-btn" type="submit" value="Rechercher" />
+    </form>
 
-</div>
+  </div>
+
+
+
+</body>

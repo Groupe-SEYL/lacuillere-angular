@@ -5,11 +5,13 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
 import {MenuFormComponent} from './menu-form/menu-form.component';
 import {MenuListComponent} from './menu-list/menu-list.component';
 
+
 const routes: Routes = [
   { path: 'restaurants', component: RestaurantListComponent },
   { path: 'newrestaurant', component: RestaurantFormComponent},
   { path: 'menus', component: MenuListComponent },
   { path: 'newmenu', component: MenuFormComponent},
+
 ];
 
 @NgModule({

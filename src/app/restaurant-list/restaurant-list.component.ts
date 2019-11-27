@@ -36,8 +36,7 @@ export class RestaurantListComponent implements OnInit {
     console.log(restaurant.id);
     const id: number = restaurant.id;
     console.log(id);
-    this.restaurantService.displaySingleRestaurant(id)
+    this.restaurantService.displayOneRestaurant(id)
       .subscribe();
-    window.location.reload();
   }
 }
