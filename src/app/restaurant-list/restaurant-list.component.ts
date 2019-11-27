@@ -38,5 +38,6 @@ export class RestaurantListComponent implements OnInit {
     console.log(id);
     this.restaurantService.displaySingleRestaurant(id)
       .subscribe();
+    window.location.reload();
   }
 }

@@ -36,8 +36,9 @@ export class RestaurantService {
   return this.http.delete<Restaurant>(url);
 }
 
-public displaySingleRestaurant(id: number): Observable<Restaurant> {
-   return this.http.get<Restaurant>('${this.restaurantsUrl/${id}');
+public displaySingleRestaurant(id: number): Observable<{}> {
+   const url = '${this.restaurantsOneUrl}/${id}'
+   return this.http.get<Restaurant>(url);
 }
 
 

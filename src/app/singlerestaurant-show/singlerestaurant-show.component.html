@@ -1,0 +1,28 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Entree</th>
+        <th scope="col">Main course</th>
+        <th scope="col">Dessert</th>
+        <th scope="col">Total price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let restaurant of restaurants">
+        <td>{{ restaurants.id }}</td>
+        <td>{{ restaurants.name }}</td>
+        <td>{{ restaurant.description }}</td>
+        <td>{{ restaurants.address}}</td>
+        <td>{{ restaurants.starsNumber }}</td>
+        <td>{{ restaurants.menus }}</td>
+        <td>{{ restaurants.averagePrice }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

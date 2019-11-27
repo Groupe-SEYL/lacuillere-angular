@@ -13,7 +13,7 @@ export class MenuListComponent implements OnInit {
   constructor(private menuService: MenuService) {}
 
   ngOnInit() {
-    this.menuService.findAll().subscribe(data => {this.menus = data;});
+    this.menuService.findAll().subscribe(data => {this.menus = data; });
   }
 
 }
