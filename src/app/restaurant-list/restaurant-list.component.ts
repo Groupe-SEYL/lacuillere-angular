@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Restaurant } from '../model/restaurant';
-import { RestaurantService } from '../service/restaurant.service';
-import { isDevMode } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Restaurant} from '../model/restaurant';
+import {RestaurantService} from '../service/restaurant.service';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -12,24 +11,32 @@ export class RestaurantListComponent implements OnInit {
 
   constructor(private restaurantService: RestaurantService) {
   }
+
   restaurants: Restaurant[];
 
   selectedRestaurant: Restaurant;
   searchText: string;
 
   ngOnInit() {
-    this.restaurantService.findAll().subscribe(data => {
-      this.restaurants = data;
-    });
+    this.displayAllRestaurants();
   }
 
-    deleteRestaurant(restaurant: Restaurant): void {
+  deleteRestaurant(restaurant: Restaurant): void {
     console.log(restaurant.id);
     const id: number = restaurant.id;
     console.log(id);
     this.restaurantService.delete(id)
-        .subscribe( );
-    window.location.reload();
+      .subscribe(success => {
+        this.displayAllRestaurants();
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  displayAllRestaurants(): void {
+    this.restaurantService.findAll().subscribe(data => {
+      this.restaurants = data;
+    });
   }
 
 
