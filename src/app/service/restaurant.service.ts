@@ -30,12 +30,7 @@ export class RestaurantService {
 
   /** DELETE: delete the restaurant from the server */
  public delete(id: number): Observable<{}> {
-  console.log(id);
-  const st: string = '' + id;
-  console.log(st);
-  const url: string = this.restaurantsUrl + '/' + id;
-  console.log(st);
-  return this.http.delete(url);
+  return this.http.delete(this.restaurantsUrl + '/' + id);
 }
 
 public displayOneRestaurant(id: number): Observable<{}> {
