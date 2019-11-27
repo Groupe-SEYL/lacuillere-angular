@@ -17,17 +17,29 @@ font-weight: 600;
   }
   .container{
     background-color: orange;
+
+  }
+  .container h2{
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    font-size: 50px;
+    color: white;
   }
   .card-body{
     background-color: gold;
+    font-size: 50px;
   }
   .btn-btn-info{
     border: solid;
     border-style: groove;
     border-radius: 15px;
+    margin: 5px;
+    padding: 5px;
     text-decoration: none;
     background-color: darkorange;
     color: gold;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Pathway Gothic One', sans-serif;
   }
 
   .btn-btn-info:hover{
@@ -120,6 +132,8 @@ margin: 0 16px;
 
 
 </style>
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Shadows+Into+Light&display=swap" rel="stylesheet">
 
 <body>
 <div class="toolbar" role="banner">
@@ -146,7 +160,7 @@ margin: 0 16px;
     <div class="col-md-12">
       <div class="card bg-dark my-5">
         <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
+          <h2 class="card-title-text-center-text-white-py-3">{{ title }}</h2>
           <ul class="text-center-list-inline-py-3">
             <li class="list-inline-item">
               <a routerLink="/restaurants" class="btn-btn-info">List Restaurants</a>
