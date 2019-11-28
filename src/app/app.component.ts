@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string;
+  subtitle: string;
 
   constructor() {
     this.title = 'La Cuillère';
+    this.subtitle = ' WORLDWIDE\'S FOOD for all ! ';
   }
 
 }

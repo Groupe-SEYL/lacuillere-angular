@@ -1,21 +1,5 @@
 <style>
 
-  .toolbar {
-    height: 70px;
-    margin: -8px;
-    display: flex;
-    align-items: center;
-    background-color: lightgray;
-    color: white;
-    font-weight: 600;
-    top: 0;
-    position: fixed;
-    width: 100%;
-    font-family: 'Shadows Into Light', cursive;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-family: 'Cuprum', sans-serif;
-    font-family: 'Courgette', cursive;
-}
   body{
     background-color: cornsilk;
   }
@@ -27,6 +11,12 @@
     font-family: 'Shadows Into Light', cursive;
     text-align: center;
     font-size: 50px;
+    color: white;
+  }
+  .container h3{
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    font-size: 20px;
     color: white;
   }
   .card-body{
@@ -83,31 +73,14 @@ margin: 0 16px;
     text-align: center;
   }
 
-
 </style>
 
 <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Shadows+Into+Light&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Courgette|Cuprum|Pathway+Gothic+One|Shadows+Into+Light&display=swap" rel="stylesheet">
 
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <body>
-<div class="toolbar" role="banner">
-
-  <img
-    width="40"
-    alt=""
-    src="#"
-  />
-
-  <span style="font-style: italic"> &hearts; WORLDWIDE'S FOOD for all !  &hearts; </span>
-  <div class="spacer"></div>
-  <a aria-label="Angular on Spring first" target="_blank" rel="noopener"  title="Restaurant">
-
-    <svg id="restaurant" height="24" data-name="Logo — FIXED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
-    </svg>
-
-  </a>
-</div>
 
 
 <div class="container">
@@ -116,6 +89,7 @@ margin: 0 16px;
       <div class="card bg-dark my-5">
         <div class="card-body">
           <h2 class="card-title-text-center-text-white-py-3">{{ title }}</h2>
+          <h3 class="card-title-text-center-text-white-py-3"> &hearts; {{ subtitle }} &hearts;</h3>
           <ul class="text-center-list-inline-py-3">
             <li class="list-inline-item">
               <a routerLink="/restaurants" class="btn-btn-info">List Restaurants</a>
@@ -136,10 +110,6 @@ margin: 0 16px;
     </div>
   </div>
 </div>
-
-
-
-
 
 
 </body>
