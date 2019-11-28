@@ -1,5 +1,5 @@
 <style>
-  .card-my-5{
+  .card-my-5 {
     font-family: 'Shadows Into Light', cursive;
     font-family: 'Pathway Gothic One', sans-serif;
     font-family: 'Cuprum', sans-serif;
@@ -17,11 +17,11 @@
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" [(ngModel)]="restaurant.name"
-          class="form-control"
-          id="name"
-          name="name"
-          placeholder="Restaurant's name"
-          required #name="ngModel">
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Restaurant's name"
+               required #name="ngModel">
       </div>
       <div [hidden]="!name.pristine" class="alert alert-danger">Restaurant must have a name!</div>
 
@@ -29,17 +29,17 @@
       <div class="form-group">
         <label for="description">Description</label>
         <input type="text" [(ngModel)]="restaurant.description"
-          class="form-control"
-          id="description"
-          name="description"
-          placeholder="Share the joy into your restaurant !"
-          required #description="ngModel">
+               class="form-control"
+               id="description"
+               name="description"
+               placeholder="Share the joy into your restaurant !"
+               required #description="ngModel">
         <div [hidden]="!description.pristine" class="alert alert-danger">Need a description!</div>
       </div>
 
-<!--      Form Menus-->
-<!--      <app-menu-form></app-menu-form>-->
-<!--      <app-menu-list></app-menu-list>-->
+      <!--      Form Menus-->
+      <!--      <app-menu-form></app-menu-form>-->
+      <!--      <app-menu-list></app-menu-list>-->
 
       <div class="form-group">
         <label for="address">Address</label>
@@ -61,32 +61,28 @@
                placeholder="STARS">
       </div>
 
-      <div class="row custom-row">
-        <div class= "col-sm-5 custom-container jumbotron">
-          <form class="form-horizontal">
-            <fieldset>
-              <div class="form-group">
-                <label for="select">List Menu </label>
-                <select id="select"
-                        [(ngModel)] = "restaurant.menus" name = "listMenu">
-
-                  <option *ngFor = "let menu of menus"
-                          [value] = "menu.id"> {{menu.name}}
-
-                  </option>
-                </select>
-              </div>
-            </fieldset>
-          </form>
+      <div class="col-sm-12 custom-container jumbotron">
+        <label for="selectMenu">Select few associate menus :</label>
+        <div class="form-group">
+          <select
+            name="contactMethod"
+            id="contactMethod"
+            class="form-control"
+            multiple
+            [(ngModel)]="restaurant.menus">
+            <option *ngFor="let menu of menuList | async" [value]="menu.id">{{ menu.name }}
+              - {{menu.description}}</option>
+          </select>
         </div>
       </div>
       <form
         class="form-horizontal"
-        #signupForm = "ngForm">
+        #signupForm="ngForm">
 
       </form>
       <button type="submit" [disabled]="!userForm.form.valid"
-        class="btn btn-info">Submit</button>
+              class="btn btn-info">Submit
+      </button>
     </form>
   </div>
 </div>

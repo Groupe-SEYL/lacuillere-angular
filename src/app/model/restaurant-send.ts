@@ -1,9 +1,8 @@
+export class RestaurantSend {
 
-export class Restaurant {
-  id: number;
   name: string;
   description: string;
-  menus: string [];
+  menus: number [];
   address: string;
   starsNumber: number;
   averagePrice: number;
