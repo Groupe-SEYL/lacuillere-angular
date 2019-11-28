@@ -70,8 +70,8 @@
                 <select id="select"
                         [(ngModel)] = "restaurant.menus" name = "listMenu">
 
-                  <option *ngFor = "let g of menus"
-                          [value] = "g.name"> {{g.name}}
+                  <option *ngFor = "let menu of menus"
+                          [value] = "menu.id"> {{menu.name}}
 
                   </option>
                 </select>
