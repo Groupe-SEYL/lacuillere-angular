@@ -22,7 +22,7 @@ export class MenuFormComponent {
   }
 
   gotoMenuList() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menus']);
   }
 
 }

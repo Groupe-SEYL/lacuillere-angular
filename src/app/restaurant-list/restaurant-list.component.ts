@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Restaurant} from '../model/restaurant';
-import {RestaurantService} from '../service/restaurant.service';
+import { Component, OnInit } from '@angular/core';
+import { Restaurant } from '../model/restaurant';
+import { RestaurantService } from '../service/restaurant.service';
+import { isDevMode } from '@angular/core';
 
 @Component({
   selector: 'app-restaurant-list',
@@ -11,11 +12,9 @@ export class RestaurantListComponent implements OnInit {
 
   constructor(private restaurantService: RestaurantService) {
   }
-
   restaurants: Restaurant[];
 
   selectedRestaurant: Restaurant;
-  searchText: string;
 
   ngOnInit() {
     this.displayAllRestaurants();
@@ -47,6 +46,4 @@ export class RestaurantListComponent implements OnInit {
     this.restaurantService.displayOneRestaurant(Restaurant)
       .subscribe();
   }
-
-
 }

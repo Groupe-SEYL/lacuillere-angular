@@ -61,8 +61,35 @@
                placeholder="STARS">
       </div>
 
+      <div class="row custom-row">
+        <div class= "col-sm-5 custom-container jumbotron">
+          <form class="form-horizontal">
+            <fieldset>
+              <div class="form-group">
+                <label for="select">List Menu </label>
+                <select id="select"
+                        [(ngModel)] = "restaurant.menus" name = "listMenu">
+
+                  <option *ngFor = "let g of menus"
+                          [value] = "g.name"> {{g.name}}
+
+                  </option>
+                </select>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <form
+        class="form-horizontal"
+        #signupForm = "ngForm">
+
+      </form>
       <button type="submit" [disabled]="!userForm.form.valid"
         class="btn btn-info">Submit</button>
     </form>
   </div>
 </div>
+
+
+
