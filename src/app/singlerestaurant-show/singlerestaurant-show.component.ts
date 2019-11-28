@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RestaurantService} from '../service/restaurant.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Restaurant} from '../model/restaurant';
+import {error} from "util";
 
 
 @Component({
@@ -12,21 +13,15 @@ import {Restaurant} from '../model/restaurant';
 export class SinglerestaurantShowComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private router: Router, private restaurantService: RestaurantService) {
-    this.restaurants = new Restaurant();
   }
-
-  restaurants: Restaurant;
-  onSubmit(restaurants) {
-    this.restaurantService.displayOneRestaurant(restaurants)
-      .subscribe(result => this.goToRestaurant());
-  }
-
-  goToRestaurant() {
-    this.router.navigate(['/restaurants/{id}']);
-  }
-
+  restaurant: Restaurant;
   ngOnInit(): void {
+    const id = this.route.snapshot.params.id;
+    this.restaurantService.getSingleRestaurant(id).subscribe(
+      restaurantGetted => {
+        this.restaurant = restaurantGetted;
+      }, err => {
+        console.log(err);
+    });
   }
-
-
 }

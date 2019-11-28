@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Restaurant } from '../model/restaurant';
-import { RestaurantService } from '../service/restaurant.service';
-import { isDevMode } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Restaurant} from '../model/restaurant';
+import {RestaurantService} from '../service/restaurant.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-restaurant-list',
@@ -10,11 +10,13 @@ import { isDevMode } from '@angular/core';
 })
 export class RestaurantListComponent implements OnInit {
 
-  constructor(private restaurantService: RestaurantService) {
+  constructor(private router: Router, private restaurantService: RestaurantService) {
   }
+
   restaurants: Restaurant[];
 
   selectedRestaurant: Restaurant;
+  searchText: string;
 
   ngOnInit() {
     this.displayAllRestaurants();
@@ -37,13 +39,9 @@ export class RestaurantListComponent implements OnInit {
       this.restaurants = data;
     });
   }
-
-
   displaySingleRestaurant(restaurant: Restaurant): void {
-    console.log(restaurant);
-    // const id: number = restaurant.id;
-    // console.log(id);
-    this.restaurantService.displayOneRestaurant(Restaurant)
-      .subscribe();
+    this.router.navigate(['/restaurants', restaurant.id]);
   }
+
+
 }

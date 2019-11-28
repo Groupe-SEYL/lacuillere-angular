@@ -33,12 +33,8 @@ export class RestaurantService {
   return this.http.delete(this.restaurantsUrl + '/' + id);
 }
 
-  /**
-   * Display a single restaurant
-   * @param restaurants
-   */
-  public displayOneRestaurant(restaurants): Observable<Restaurant> {
-  return this.http.get<Restaurant>(this.restaurantsUrl);
+  public getSingleRestaurant(id: number): Observable<Restaurant> {
+    return this.http.get<Restaurant>(this.restaurantsUrl + '/' + id);
 }
 
 
