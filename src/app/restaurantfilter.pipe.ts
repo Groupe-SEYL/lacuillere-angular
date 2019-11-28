@@ -6,18 +6,18 @@ import {Restaurant} from './model/restaurant';
 })
 export class RestaurantFilterPipe implements PipeTransform {
 
-  transform(items: Restaurant[], searchText: string): Restaurant[] {
+  transform(restaurant: Restaurant[], searchText: string): Restaurant[] {
 
-    if (!items) {
+    if (!restaurant) {
       return [];
     }
     if (!searchText) {
-      return items;
+      return restaurant;
     }
     searchText = searchText.toLocaleLowerCase();
 
-    return items.filter(it => {
-      return it.name.includes(searchText);
+    return restaurant.filter(it => {
+      return it.name.toLocaleLowerCase().includes(searchText);
     });
   }
 
