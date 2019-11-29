@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {RestaurantService} from '../service/restaurant.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Restaurant} from '../model/restaurant';
+import {Menu} from '../model/menu';
+import {MenuService} from '../service/menu.service';
 
 
 @Component({
@@ -11,10 +13,11 @@ import {Restaurant} from '../model/restaurant';
 })
 export class SinglerestaurantShowComponent implements OnInit {
   constructor(private route: ActivatedRoute,
-              private router: Router, private restaurantService: RestaurantService) {
+              private router: Router, private restaurantService: RestaurantService, private  menuService: MenuService) {
   }
 
   restaurant: Restaurant;
+  menus: Menu[];
 
   ngOnInit(): void {
     const id = this.route.snapshot.params.id;
@@ -24,5 +27,8 @@ export class SinglerestaurantShowComponent implements OnInit {
       }, err => {
         console.log(err);
       });
+  }
+  public getMenus(): void {
+    this.menuService.findAll().subscribe(data => {this.menus = data; });
   }
 }

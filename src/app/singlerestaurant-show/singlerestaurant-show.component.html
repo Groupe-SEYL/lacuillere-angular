@@ -10,7 +10,9 @@
     text-align: center;
     position: relative;
     left: 30%;
+    font-family: 'Antic', sans-serif;
   }
+
 </style>
 
 <div class="singleRestaurant">
@@ -19,7 +21,31 @@
           <p>Description : {{ restaurant.description}} </p>
           <p>Address : {{ restaurant.address}} </p>
           Menus [Appertizer ; Main course ; Dessert]<br/>
-          {{ restaurant.menus}}<br/>
+
+          <p> {{ restaurant.menus}} </p>
+{{getMenus()}}
+<!--    <table class="table table-bordered table-striped">-->
+<!--      <tr *ngFor="let menu of menus">-->
+<!--        Name : {{ menu.name }}<br/>-->
+<!--        {{ menu.description }}<br/>-->
+<!--        Appertizer{{ menu.entree }}<br/>-->
+<!--        Main course : {{ menu.mainCourse }}<br/>-->
+<!--        Dessert : {{ menu.dessert }}<br/>-->
+<!--        Total price : {{ menu.totalPrice }}<br/>-->
+<!--      </tr>-->
+<!--    </table>-->
+
+<!--                <ul>-->
+<!--                  <li *ngFor="let menu of menus">-->
+<!--                    <span> Name : {{ menu.name }}</span><br/>-->
+<!--                    {{ menu.description }}<br/>-->
+<!--                    Appertizer : {{ menu.entree }}<br/>-->
+<!--                    Main course : {{ menu.mainCourse }}<br/>-->
+<!--                    Dessert : {{ menu.dessert }}<br/>-->
+<!--                    Total price : {{ menu.totalPrice }}<br/>-->
+<!--                  </li>-->
+<!--                </ul>-->
+
           Stars : {{ restaurant.starsNumber}}<br/>
           Price = {{ restaurant.averagePrice}}
 </div>
