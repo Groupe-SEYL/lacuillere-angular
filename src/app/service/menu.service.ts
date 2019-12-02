@@ -18,4 +18,5 @@ export class MenuService {
   public save(menu: Menu) {
     return this.http.post<Menu>(this.menusUrl, menu);
   }
+
 }

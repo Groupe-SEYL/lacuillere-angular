@@ -35,17 +35,17 @@
 <!--    </table>-->
 
                 <ul>
-                  <li *ngFor="let menu of menus">
+                  <li *ngFor="let menu of restaurant.menus">
                     <strong> Menu #{{ menu.id}} {{ menu.name }}</strong><br/>
                     {{ menu.description }}<br/>
                     Appertizer : {{ menu.entree }}<br/>
                     Main course : {{ menu.mainCourse }}<br/>
                     Dessert : {{ menu.dessert }}<br/>
-                    Total price : {{ menu.totalPrice }}<br/>
+                    Total price : {{menu.totalPrice }}<br/>
                   </li>
                 </ul>
 
           Stars : {{ restaurant.starsNumber}}<br/>
-          Price = {{ restaurant.averagePrice}}
+          Average Price for the restaurant = {{ restaurant.averagePrice}}
 </div>
 

@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Restaurant} from '../model/restaurant';
 import {Observable} from 'rxjs/Observable';
 import {RestaurantSend} from '../model/restaurant-send';
+import {Menu} from '../model/menu';
+
 
 @Injectable()
 export class RestaurantService {
@@ -11,6 +13,7 @@ export class RestaurantService {
 
   constructor(private http: HttpClient) {
     this.restaurantsUrl = 'http://localhost:8080/api/restaurants';
+    this.menuUrl = 'http://localhost:8080/api/restaurants/id';
   }
 
   public findAll(): Observable<Restaurant[]> {
